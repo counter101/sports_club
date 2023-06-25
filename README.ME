@@ -1,0 +1,68 @@
+# CRUD Application with PHP and Database
+
+This is a simple CRUD application built with PHP and a database. It allows you to perform basic create, read, update, and delete operations on a dataset.
+
+## Technologies Used
+
+- PHP
+- MySQL (or any other database of your choice)
+- HTML/CSS
+- JAVASCRIPT
+
+## Setup Instructions
+
+1. Clone the repository or download the source code.
+2. Set up a local web server environment (e.g., XAMPP, WAMP, or MAMP).
+3. Import the database schema into your database management system.
+4. Update the database connection credentials in the PHP files.
+5. Start your local web server.
+6. Access the application through the browser.
+
+## File Structure
+
+- `index.php`: The main page that displays the list of records and provides options to perform CRUD operations.
+- `add_new.php`: Handles the creation of a new record.
+- `export.php`: Handle export of data from table(make sure to change the path).
+- `edit.php`: Allows updating the information of a specific record.
+- `delete.php`: Handles the deletion of a record.
+- `db_conn.php`: Handles the connection of data.
+
+## Database Schema
+
+The database schema typically includes a table with relevant columns to store the data for the CRUD operations. 
+
+CREATE TABLE member_details (
+id INT AUTO_INCREMENT PRIMARY KEY,
+first_name VARCHAR(100) NOT NULL,
+last_name VARCHAR(100) NOT NULL,
+birthdate DATE NOT NULL,
+phone_number BIGINT(100) NOT NULL,
+phone_number2 BIGINT(100) NOT NULL,
+email VARCHAR(100) NOT NULL,
+email2 VARCHAR(100) NOT NULL,
+date_joined DATE NOT NULL
+membership_cat INT(20) NOT NULL,
+street VARCHAR(100) NOT NULL,
+province VARCHAR(100) NOT NULL,
+country VARCHAR(100) NOT NULL,
+zipcode INT(100) NOT NULL,
+);
+
+CREATE TABLE membership (
+member_id INT(100) NOT NULL,
+year INT(100) NOT NULL,
+membership_paid_amount INT(50) NOT NULL,
+payment_date DATE NOT NULL
+);
+
+## QUESTION AND ANSWER
+1. About the Membership category I'm confused if I need to make it char or int. Resolution, I create a selection for Full member, Associate member, Previous member and VIP member and throw number values in database.
+2. About the Membership table, Also confused what data need to show. 
+Resolution
+    A. Get ID of member when adding member. 
+    B. Get the year when member register and remove the month and day.
+    C. Create switch method for the membership paid amount. 
+    D. I make payment date base on the join date.
+3. I don't know if the membership table need to export as csv. I only do it in member_details.
+4. I use SQL for storage of data. 
+5. I make it simple, I add bootstrap and if you want me to improve the overall details. Let me know. Thank you!
